@@ -1,8 +1,16 @@
 # RandNum
 A simple header only library to generate random numbers efficiently.
 Template method wrapper allow quick and easy generation of random numbers, both integral and floating point, through a common interface.
+Allows for seeding and setting precision to which decimal place values will be randomized. Note that floating point numbers in general are not precise, so the effect here is diminishing with every decimal place.
 
 Random numbers generated via Squirrel3 hash function and pseudo-random number generator developed by Squirrel Eiserloh and presented [here](https://www.youtube.com/watch?v=LWFzPP8ZbdU)
+
+Limitations:
+Doubles are limited to INT_MAX.
+
+How to use:
+Copy the header file into your includes/your project, include it via #include "RandNum/RandNum.h"
+
 
 Example of usage:
 ```cpp
@@ -45,8 +53,4 @@ int main() {
             << RandNum::getRandom<long double>() << std::endl; // prints 1018400218.18301
 }
 
-Limitations:
-Doubles are limited to INT_MAX.
 
-How to use:
-Copy the header file into your includes/your project, include it via #include "RandNum/RandNum.h"
