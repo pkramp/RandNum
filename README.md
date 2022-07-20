@@ -51,6 +51,13 @@ int main() {
             << RandNum::getRandom<double>() << std::endl; // prints 901534792.937718
   std::cout << std::setprecision(RandNum::precision())
             << RandNum::getRandom<long double>() << std::endl; // prints 1018400218.18301
+  // get multiple random booleans. Given a 0.8 chance, means it is an 80% chance for true
+  auto trues{0};
+  for (auto i = 0; i < 10000000; i++) {
+    if (RandNum::getRandom<bool>(0.8))
+      trues++;
+  }
+  std::cout << trues; // prints 8002838, so 80.02838% of results are true
 }
 
 
