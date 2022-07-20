@@ -120,7 +120,6 @@ template <std::floating_point T> T getRandom(T low, T high) {
   return static_cast<T>(low + getRandom(high - low));
 };
 
-
 template <Detail::Boolean T> T getRandom() {
   return static_cast<T>(Detail::Squirrel3() % 2);
 };
